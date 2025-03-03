@@ -1,0 +1,16 @@
+
+version: '3'
+services:
+  Pooja:
+    image: "poojasriramesh/22it029-personal-api"  
+    container_name: poojasri_container
+    restart: always
+    ports:
+      - "5008:5000"
+
+  ranjith:
+    image: "ranjith1314/22itl04-personal-api"  
+    container_name: ranjith_container
+    restart: always
+    ports:
+      - "5009:5000"
