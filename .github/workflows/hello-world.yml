@@ -1,0 +1,8 @@
+name: hello-world-ranjith
+on: push
+jobs: 
+  my-job:
+     runs-on: ubuntu-latest
+     steps:
+     - name: my stpe
+       run: echo "hello world - ranjith "
