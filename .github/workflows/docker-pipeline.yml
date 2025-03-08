@@ -1,0 +1,26 @@
+name: docker-pipeline-ranjith
+on: push
+jobs: 
+  docker-job:
+     runs-on: ubuntu-latest
+     steps:
+     - name: print your register number
+       run: echo "hello world - 22itl04 "
+
+     - name: checkout
+       uses: action/check@v4.2.2
+
+     - name: dockeHUBr build
+       run: docker build -t ranjith1803/ml-22itl04 .
+
+     - name: docker images
+       run: docker images
+        
+     - name: login docker 
+       uses: docker/login-action@v3
+       with:
+         username: ${{ vars.DOCKERHUB_USERNAME }}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
+         
+     - name: push docker image to DOCKERHUB
+       run: docker push ranjith1803/ml-22itl04 . 
