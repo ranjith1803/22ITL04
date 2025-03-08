@@ -1,0 +1,17 @@
+name: docker-pipeline-ranjith
+on: push
+jobs: 
+  docker-job:
+     runs-on: ubuntu-latest
+     steps:
+     - name: print your register number
+        run: echo "hello world - 22itl04 "
+
+     - name: checkout
+       user: action/check@v4.2.2
+
+     - name: docker build
+        run: docker build -t ranjith1803/ml-22itl04 .
+
+     - name: docker images
+        run: docker images
